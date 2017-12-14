@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $permission_level_labels = [
+      'regular'   => 1,
+      'admin'     => 2
+    ];
+    public function has_permission($level){
+      $level = $this->permission_level_labels[$level];
+      return $this->permission_level >= $level;
+    }
 }
