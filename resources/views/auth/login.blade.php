@@ -1,6 +1,32 @@
 @extends('layouts.app')
-
+@section('title')
+  Login
+@endsection
 @section('content')
+<div class="mdl-grid">
+  <div class="mdl-cell
+    mdl-cell--6-col-desktop mdl-cell--3-offset-desktop
+    mdl-cell--8-col-tablet mdl-cell--2-offset-tablet
+    mdl-cell--10-col-phone mdl-cell--1-offset-phone
+    ">
+    <div class="mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h4>
+          Featured event:<br>
+          May 24, 2016<br>
+          7-11pm
+        </h4>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Add to Calendar
+        </a>
+        <div class="mdl-layout-spacer"></div>
+        <i class="material-icons">event</i>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

@@ -23,7 +23,7 @@ Route::get('/page/{id}', function ($page_id) {
 /* single pages */
 Route::get('/author/{id}', function ($author_id) {
   return "author $author_id loaded";
-})->name('author');
+})->name('people');
 
 Route::get('/publication/{id}', function ($publication_id) {
   return "publication $publication_id loaded";
@@ -42,15 +42,15 @@ Route::post('/dataset-request/{id}', function ($dataset_request_id) {
 })->name('dataset-request');
 
 /* listing pages */
-Route::get('/authors/{page}', function ($authors_page=0) {
+Route::get('/authors/{page?}', function ($authors_page=0) {
   return "authors $authors_page loaded";
-})->name('authors');
+})->name('peoples');
 
-Route::get('/publications/{page}', function ($publications_page=0) {
+Route::get('/publications/{page?}', function ($publications_page=0) {
   return "publications $publications_page loaded";
 })->name('publications');
 
-Route::get('/datasets/{page}', function ($datasets_page=0) {
+Route::get('/datasets/{page?}', function ($datasets_page=0) {
   return "datasets $datasets_page loaded";
 })->name('datasets');
 
@@ -60,6 +60,9 @@ Route::get('/datasets/{page}', function ($datasets_page=0) {
   ===================================================================================================
 */
 Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'checkPermission:admin'])->group(function (){
+  Route::resources([
+      'pages' => 'PageController'
+  ]);
   /* 
     =================================================================================================
     ======================================= publications ============================================
