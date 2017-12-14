@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dataset extends Model
 {
-  protected $table = 'datasets';
-  protected $primatyKey = 'id';
-  protected $incrementing = true;
-  protected $dates = ['deleted_at'];
+  public $table = 'datasets';
+  public $primatyKey = 'id';
+  public $incrementing = true;
+  public $dates = ['deleted_at'];
 
   public function publication(){
     return $this->belongsTo('App\Publication');

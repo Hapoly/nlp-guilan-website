@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PublicationAuthor extends Model
 {
-  protected $table = 'publication_author';
-  protected $primatyKey = 'id';
-  protected $incrementing = true;
-  protected $dates = ['deleted_at'];
+  public $table = 'publication_author';
+  public $primatyKey = 'id';
+  public $incrementing = true;
+  public $dates = ['deleted_at'];
 }

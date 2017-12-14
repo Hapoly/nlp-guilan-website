@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publication extends Model
 {
-    protected $table = 'publications';
-    protected $primatyKey = 'id';
-    protected $incrementing = true;
-    protected $dates = ['deleted_at'];
+    public $table = 'publications';
+    public $primatyKey = 'id';
+    public $incrementing = true;
+    public $dates = ['deleted_at'];
 
     public function authors(){
       return $this->belongsToMany('App\Author');
