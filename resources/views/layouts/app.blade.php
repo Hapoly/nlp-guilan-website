@@ -92,8 +92,10 @@
         @endguest
       </div>
     </nav>
-    @yield('content')
-    <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      @yield('content')
+    </div>
+    <nav class="navbar navbar-dark fixed-bottom bg-dark">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
