@@ -15,8 +15,8 @@ class CreatePublicationsTable extends Migration
     {
       Schema::create('publications', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('title');
-        $table->string('target');
+        $table->string('title', 128);
+        $table->string('target', 128);
         $table->unsignedInteger('year');
         $table->unsignedSmallInteger('type');
         $table->unsignedSmallInteger('status');

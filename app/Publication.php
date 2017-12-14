@@ -10,4 +10,8 @@ class Publication extends Model
     protected $primatyKey = 'id';
     protected $incrementing = true;
     protected $dates = ['deleted_at'];
+
+    public function authors(){
+      return $this->belongsToMany('App\Author');
+    }
 }
