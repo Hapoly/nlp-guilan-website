@@ -14,9 +14,12 @@ class CreatePublicationsTable extends Migration
     public function up()
     {
       Schema::create('publications', function (Blueprint $table) {
+        $table->charset = 'utf8';
+        $table->collation = 'utf8_persian_ci';
+
         $table->increments('id');
-        $table->string('title', 128)->collation('utf8_presian_ci');;
-        $table->string('target', 128)->collation('utf8_presian_ci');;
+        $table->string('title', 128);;
+        $table->string('target', 128);;
         $table->unsignedInteger('year');
         $table->unsignedSmallInteger('type');
         $table->unsignedSmallInteger('status')->default(1);

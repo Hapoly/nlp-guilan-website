@@ -14,8 +14,11 @@ class CreateUsersTable extends Migration
     public function up()
     {
       Schema::create('users', function (Blueprint $table) {
+        $table->charset = 'utf8';
+        $table->collation = 'utf8_persian_ci';
+
         $table->increments('id');
-        $table->string('name')->collation('utf8_presian_ci');
+        $table->string('name');
         $table->string('email')->unique();
         $table->string('password');
         $table->unsignedSmallInteger('status')->default(1);

@@ -15,10 +15,10 @@ class SlideTableSeeder extends Seeder
         fake data
       */
       $data = [
-        ["title"  =>  "slide 1", "caption" => "caption 1"],
-        ["title"  =>  "slide 2", "caption" => "caption 2"],
-        ["title"  =>  "slide 3", "caption" => "caption 3"],
-        ["title"  =>  "slide 4", "caption" => "caption 4"],
+        ["title"  =>  "slide 1", "caption" => "caption 1", "image_url" => "https://www.dafont.com/img/illustration/s/o/something.jpg"],
+        ["title"  =>  "slide 2", "caption" => "caption 2", "image_url" => "https://www.dafont.com/img/illustration/s/o/something.jpg"],
+        ["title"  =>  "slide 3", "caption" => "caption 3", "image_url" => "https://www.dafont.com/img/illustration/s/o/something.jpg"],
+        ["title"  =>  "slide 4", "caption" => "caption 4", "image_url" => "https://www.dafont.com/img/illustration/s/o/something.jpg"],
         
       ];
       foreach($data as $row)
