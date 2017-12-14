@@ -16,11 +16,12 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 64);
-            $table->unsignedSmallInteger('gradutation_status');
+            $table->unsignedSmallInteger('graduation_status');
             $table->unsignedSmallInteger('position');
             $table->string('biography', 1000);
-            $table->unsignedSmallInteger('status');
+            $table->unsignedSmallInteger('status')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

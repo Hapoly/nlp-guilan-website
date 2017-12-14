@@ -19,8 +19,9 @@ class CreatePublicationsTable extends Migration
         $table->string('target', 128);
         $table->unsignedInteger('year');
         $table->unsignedSmallInteger('type');
-        $table->unsignedSmallInteger('status');
+        $table->unsignedSmallInteger('status')->default(1);
         $table->timestamps();
+        $table->softDeletes();
       });
     }
 

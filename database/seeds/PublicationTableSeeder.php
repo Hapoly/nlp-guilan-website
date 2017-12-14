@@ -11,21 +11,17 @@ class PublicationTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('publications')->insert([
-        'title'     => 'sample publications',
-        'target'    => 'sample target',
-        'year'      => 2012,
-        'status'    => 1,
-        'type'      => 1
-      ]);
-      // $publication = new app\Publication;
-      // echo 'testing!';
-      // $publication->title = 'sample publication';
-      // $publication->target = 'sample target';
-      // $publication->year = 2012;
-      // $publication->status = 1;
-      // $publication->type = 1;
-
-      // $publication->save();
+      /*
+        fake data
+      */
+      $data = [
+        ['id' => 1, 'title' => 'publication 1', 'target' => 'target 1', 'year' => 2012, 'type'  => 1],
+        ['id' => 2, 'title' => 'publication 2', 'target' => 'target 1', 'year' => 2009, 'type'  => 2],
+        ['id' => 3, 'title' => 'publication 3', 'target' => 'target 2', 'year' => 2013, 'type'  => 1],
+        ['id' => 4, 'title' => 'publication 4', 'target' => 'target 1', 'year' => 2011, 'type'  => 1],
+        ['id' => 5, 'title' => 'publication 5', 'target' => 'target 3', 'year' => 2011, 'type'  => 2],
+      ];
+      foreach($data as $row)
+        DB::table('publications')->insert($row);
     }
 }

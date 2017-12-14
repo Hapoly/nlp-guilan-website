@@ -18,6 +18,7 @@ class CreatePublicationAuthorsTable extends Migration
             $table->unsignedInteger('publication_id')->index();
             $table->unsignedInteger('author_id')->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
