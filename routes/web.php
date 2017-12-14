@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-  return 'home page';
-});
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/page/{id}', function ($page_id) {
   return "page $page_id loaded";

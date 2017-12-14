@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
         $table->string('email')->unique();
         $table->string('password');
         $table->unsignedSmallInteger('status')->default(1);
+        $table->unsignedSmallInteger('permission_level')->default(1); // 1 => regular user, 2 => admin user
         $table->rememberToken();
         $table->timestamps();
         $table->softDeletes();
