@@ -14,4 +14,8 @@ class Publication extends Model
     public function authors(){
       return $this->belongsToMany('App\Author');
     }
+
+    public function datasets(){
+      return $this->hasMany('App\Dataset');
+    }
 }

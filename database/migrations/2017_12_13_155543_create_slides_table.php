@@ -15,8 +15,10 @@ class CreateSlidesTable extends Migration
   {
     Schema::create('slides', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('title', 64);
-      $table->string('caption', 128);
+      $table->string('title', 64)->collation('utf8_presian_ci');
+      $table->string('caption', 128)->collation('utf8_presian_ci');
+      $table->string('image_url')->collation('utf8_persian_ci');
+      $table->string('target_link')->default('#')->collation('utf8_presian_ci');
       $table->unsignedSmallInteger('status')->default(1);
       $table->timestamps();
       $table->softDeletes();

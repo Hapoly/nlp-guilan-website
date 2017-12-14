@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAuthorsTable extends Migration
+class CreateDatasetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateAuthorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('datasets', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 64)->collation('utf8_presian_ci');;
-            $table->unsignedSmallInteger('graduation_status');
-            $table->unsignedSmallInteger('position');
-            $table->string('biography', 1000)->collation('utf8_presian_ci');;
+            $table->string('title', '128')->collation('utf8_presian_ci');
+            $table->string('caption', '1000')->collation('utf8_persian_ci');
+            $table->unsignedSmallInteger('type')->default(1); // 1 => downloadble, 2 => have to request
+            $table->string('file_url')->collation('utf8_persian_ci');
             $table->unsignedSmallInteger('status')->default(1);
+            $table->integer('publication')->index();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +33,6 @@ class CreateAuthorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('datasets');
     }
 }
