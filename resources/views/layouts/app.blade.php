@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
   <head>
     <title>
       @hasSection('title')
@@ -13,11 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -91,66 +92,24 @@
         @endguest
       </div>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    @yield('content')
+    <nav class="navbar navbar-dark bg-dark">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        </li>
+      </ul>
+      <ul class="navbar-nav float-right">
+        <li class="nav-item">
+          <a class="nav-link"href="https://github.com/Hapoly">
+            designed by hapoly
+          </a>
+        </li>
+      </ul>
+    </nav>
   </body>
-</html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{{ asset('css/material.css') }}">
-    <script defer src="{{ asset('js/material.js') }}"></script>
-</head>
-<body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title"></span>
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="{{ route('peoples') }}">People</a>
-          <a class="mdl-navigation__link" href="{{ route('publications') }}">Publications</a>
-          <a class="mdl-navigation__link" href="{{ route('datasets') }}">Datasets</a>
-          @guest
-            <a class="mdl-navigation__link" href="{{ route('login') }}">login</a>
-            <a class="mdl-navigation__link" href="{{ route('register') }}">register</a>
-          @else
-            <a class="mdl-navigation__link" href="{{ route('logout') }}" 
-              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-              logout({{Auth::user()->name}})
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            </form>
-          @endguest
-        </nav>
-      </div>
-    </header>
-    @auth
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">{{ config('app.name', 'Laravel') }}</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="{{ url('admin/pages/') }}">Pages</a>
-          <a class="mdl-navigation__link" href="{{ url('admin/slides/') }}">Slides</a>
-          <a class="mdl-navigation__link" href="{{ url('admin/publications/') }}">Publications</a>
-          <a class="mdl-navigation__link" href="{{ url('admin/authors/') }}">Authors</a>
-          <a class="mdl-navigation__link" href="{{ url('admin/datasets/') }}">Datasets</a>
-        </nav>
-      </div>
-    @endauth
-    <main class="mdl-layout__content">
-      <div class="page-content">
-        @yield('content')
-      </div>
-    </main>
-  </div>
-</body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
 </html>
