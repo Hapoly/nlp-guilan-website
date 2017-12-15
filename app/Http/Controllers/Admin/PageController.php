@@ -13,8 +13,43 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-      $pages = Page::paginate(10);
+    public function index(Request $request){
+      $pages = new Page;
+      $links = '';
+
+      $sort = $request->input('sort', '###');
+      $search = $request->input('search', '###');
+      
+      if($sort != '###' && $search == '###'){
+        $pages = $pages->orderBy($request->input('sort'), 'desc');
+        $pages = $pages->paginate(10);
+
+        $links = $pages->appends(['sort' => $request->input('sort')])->links();
+
+      }else if($sort == '###' && $search != '###'){
+        $pages = $pages->where('title', 'LIKE', "%$search%");
+        $pages = $pages->paginate(10);
+
+        $links = $pages->appends(['sort' => $request->input('sort')])->links();
+
+      }else if($sort != '###' && $search != '###'){
+        $pages = $pages->where('title', 'LIKE', "%$search%");
+        $pages = $pages->orderBy($request->input('sort'), 'desc');
+        $pages = $pages->paginate(10);
+
+        $links = $pages->appends(['sort' => $request->input('sort')])->links();
+
+      }else{
+        $pages = $pages->paginate(10);
+      }
+      
+      
+      return view('admin.pages.index', [
+        'pages'   => $pages,
+        'links'   => $links,
+        'sort'    => $sort,
+        'search'  => $search,
+      ]);
     }
 
     /**
@@ -23,7 +58,7 @@ class PageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        //
+        return view('admin.pages.create');
     }
 
     /**
@@ -34,7 +69,15 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $page = new Page;
+      
+      $page->title  = $request->input('title');
+      $page->body   = $request->input('body');
+      $page->status = $request->input('status');
+      
+      $page->save();
+
+      return redirect()->route('pages.show', ['page' => $page]);
     }
 
     /**
@@ -45,7 +88,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        //
+      return view('admin.pages.show', ['page' => $page]);
     }
 
     /**
@@ -56,7 +99,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+      return view('admin.pages.edit', ['page' => $page]);
     }
 
     /**
