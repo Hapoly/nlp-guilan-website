@@ -5,8 +5,14 @@ new page
 @section('content')
 <form action="{{route('pages.store')}}" method="POST">
   {{csrf_field()}}
-  <input name="title" placeholder="page title" value=""/><br>
-  <textarea name="body" line="3" placeholder="page body" value=""/></textarea><br>
+  @if($errors->has('title'))
+    {{$errors->first('title')}}
+  @endif
+  <input name="title" placeholder="page title" value="{{old('title')}}"/><br>
+  @if($errors->has('body'))
+    {{$errors->first('body')}}
+  @endif
+  <textarea name="body" line="3" placeholder="page body" value="{{old('body')}}"/></textarea><br>
   <select name="status">
     <option value="1">published</option>
     <option value="2">unpublished</option>

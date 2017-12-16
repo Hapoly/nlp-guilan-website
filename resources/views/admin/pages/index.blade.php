@@ -22,9 +22,13 @@ pages
         <td>{{$page->title}}</td>
         <td>{{$page->status}}</td>
         <td>
-          <a href="#">show</a>
-          <a href="#">edit</a>
-          <a href="#">remove</a>
+          <a href="{{route('pages.show', ['page' => $page])}}">show</a>
+          <a href="{{route('pages.edit', ['page' => $page])}}">edit</a>
+          <form action="{{route('pages.destroy', ['page' => $page])}}" method="POST">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <button type="submit">remove</button>
+          </form>
         </td>
       </tr>
     @endforeach

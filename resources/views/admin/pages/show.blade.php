@@ -15,4 +15,11 @@ new page
 <div>
   <a href="{{route('pages.edit', ['page' => $page])}}">edit this page</a>
 </div>
+<div>
+  <form action="{{route('pages.destroy', ['page' => $page])}}" method="POST">
+    {{ method_field('DELETE') }}
+    {{ csrf_field() }}
+    <button type="submit">remove this page</button>
+  </form>
+</div>
 @endsection

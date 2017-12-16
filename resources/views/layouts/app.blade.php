@@ -92,7 +92,7 @@
         @endguest
       </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-bottom: 80px;">
       @yield('content')
     </div>
     <nav class="navbar navbar-dark fixed-bottom bg-dark">

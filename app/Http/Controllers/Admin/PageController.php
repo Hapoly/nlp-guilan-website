@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePage;
 
 class PageController extends Controller
 {
@@ -67,8 +68,7 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(StorePage $request){
       $page = new Page;
       
       $page->title  = $request->input('title');
@@ -86,8 +86,7 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
-    {
+    public function show(Page $page){
       return view('admin.pages.show', ['page' => $page]);
     }
 
@@ -97,8 +96,7 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
-    {
+    public function edit(Page $page){
       return view('admin.pages.edit', ['page' => $page]);
     }
 
@@ -109,9 +107,15 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
-    {
-        //
+    public function update(StorePage $request, Page $page){
+      
+      $page->title  = $request->input('title');
+      $page->body   = $request->input('body');
+      $page->status = $request->input('status');
+      
+      $page->save();
+
+      return redirect()->route('pages.show', ['page' => $page]);
     }
 
     /**
@@ -120,8 +124,8 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
-    {
-        //
+    public function destroy(Page $page){
+      $page->delete();
+      return redirect()->route('pages.index');
     }
 }

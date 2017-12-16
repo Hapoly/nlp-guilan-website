@@ -19,7 +19,7 @@ class CreatePagesTable extends Migration
 
           $table->increments('id');
           $table->string('title', 32);
-          $table->string('body', 32);
+          $table->string('body', 1000);
           $table->unsignedSmallInteger('status')->default(1);
           $table->timestamps();
           $table->softDeletes();
