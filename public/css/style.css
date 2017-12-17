@@ -11,3 +11,26 @@
 table th,td{
   text-align: center;
 }
+.icons{
+  /* margin-left: 65px;
+  display: inline-flex; */
+}
+.trash-icon{
+  display: inline;
+}
+.fa-trash-o{
+  color: brown;
+}
+.fa-edit{
+  color: blue;
+}
+.fa-file-text-o{
+color: black;
+}
+.btn-outline-secondary{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.create:hover{
+  text-decoration: none;
+}

@@ -6,9 +6,10 @@ pages
 <div class="container">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
+    <div class="border-radius">
     <form action="{{route('pages.index',['sort' => $sort ,'page' => 1])}}" method="get">
       <div class="row">
-        <div class="col-lg-10 offset-lg-1">
+        <div class="col-lg-12">
           <div class="input-group">
             <input class="form-control"  name="search" placeholder="search..." value="{{$search != '###'? $search: ''}}">
             <span class="input-group-btn">
@@ -18,8 +19,9 @@ pages
        </div>
       </div>
      </form>
-      <a href="{{route('pages.create')}}">create</a>
-    
+     <button type="button" class="btn btn-outline-secondary">
+      <a class="create" href="{{route('pages.create')}}">create</a>
+     </button>
       <table class="table">
         <thead class="grey">
           <tr>
@@ -36,12 +38,14 @@ pages
               <td>{{$page->title}}</td>
               <td>{{$page->status}}</td>
               <td>
-                <a href="{{route('pages.show', ['page' => $page])}}">show</a>
-                <a href="{{route('pages.edit', ['page' => $page])}}">edit</a>
-                <form action="{{route('pages.destroy', ['page' => $page])}}" method="POST">
+                <a href="{{route('pages.show', ['page' => $page])}}">
+                <i class="fa fa-file-text-o"></i></a>
+                <a href="{{route('pages.edit', ['page' => $page])}}">
+                <i class="fa fa-edit"></i></a>
+                <form action="{{route('pages.destroy', ['page' => $page])}}" method="POST" class="trash-icon">
                   {{ method_field('DELETE') }}
                   {{ csrf_field() }}
-                  <button type="submit">remove</button>
+                  <i class="fa fa-trash-o"></i>
                 </form>
               </td>
             </tr>
@@ -49,7 +53,7 @@ pages
         </tbody>
       </table>
       </div>
-      
+    </div>
   </div>
 </div>
 {{ $pages->links() }}
