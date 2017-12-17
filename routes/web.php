@@ -61,7 +61,10 @@ Route::get('/datasets/{page?}', function ($datasets_page=0) {
 */
 Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'checkPermission:admin'])->group(function (){
   Route::resources([
-      'pages' => 'PageController'
+    'pages' => 'PageController'
+  ]);
+  Route::resources([
+    'slides' => 'SlideController'
   ]);
   /* 
     =================================================================================================

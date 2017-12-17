@@ -108,7 +108,6 @@ class PageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(StorePage $request, Page $page){
-      
       $page->title  = $request->input('title');
       $page->body   = $request->input('body');
       $page->status = $request->input('status');

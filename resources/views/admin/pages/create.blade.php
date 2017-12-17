@@ -13,6 +13,9 @@ new page
     {{$errors->first('body')}}
   @endif
   <textarea name="body" line="3" placeholder="page body" value="{{old('body')}}"/></textarea><br>
+  @if($errors->has('status'))
+    {{$errors->first('status')}}
+  @endif
   <select name="status">
     <option value="1">published</option>
     <option value="2">unpublished</option>
