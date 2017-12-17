@@ -5,3 +5,9 @@
 .row{
   margin-top: 1rem;
 }
+.grey{
+  background-color: #eceeef;
+}
+table th,td{
+  text-align: center;
+}
