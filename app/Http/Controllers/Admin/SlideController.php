@@ -6,6 +6,7 @@ use App\Slide;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSlide;
+use Storage;
 
 class SlideController extends Controller
 {
@@ -14,8 +15,7 @@ class SlideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
+    public function index(Request $request){
       $slides = new Slide;
       $links = '';
 
@@ -45,7 +45,7 @@ class SlideController extends Controller
         $slides = $slides->paginate(10);
       }
       
-      
+      // return json_encode($slides);
       return view('admin.slides.index', [
         'slides'   => $slides,
         'links'   => $links,
@@ -70,15 +70,18 @@ class SlideController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSlide $request)
-    {
+    public function store(StoreSlide $request){
       $slide = new Slide;
       
       $slide->title         = $request->input('title');
       $slide->caption       = $request->input('caption');
       $slide->target_link   = $request->has('target_link')? $request->input('target_link'): $slide->target_link;
       $slide->status        = $request->input('status');
-      
+
+      $image = Storage::put('public/slides', $request->file('image'), 'public');
+      $image = explode('/', $image)[2];
+      $slide->image_url = $image;
+
       $slide->save();
 
       return redirect()->route('slides.show', ['slide' => $slide]);
@@ -111,11 +114,17 @@ class SlideController extends Controller
      * @param  \App\Slide  $slide
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slide $slide){
+    public function update(StoreSlide $request, Slide $slide){
       $slide->title         = $request->input('title');
       $slide->caption       = $request->input('caption');
       $slide->target_link   = $request->has('target_link')? $request->input('target_link'): $slide->target_link;
       $slide->status        = $request->input('status');
+      
+      if($request->hasFile('image')){
+        $image = Storage::put('public/slides', $request->file('image'), 'public');
+        $image = explode('/', $image)[2];
+        $slide->image_url = $image;  
+      }
       
       $slide->save();
 

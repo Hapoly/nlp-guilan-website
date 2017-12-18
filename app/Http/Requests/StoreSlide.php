@@ -13,7 +13,7 @@ class StoreSlide extends FormRequest
    */
   public function authorize()
   {
-      return false;
+      return true;
   }
 
   /**
@@ -28,7 +28,7 @@ class StoreSlide extends FormRequest
       "caption"       => "string|max:1000|required",
       "status"        => "numeric|required|in:1,2",
       "target_link"   => "string",
-      "image"         => "file|required",
+      "image"         => "mimes:jpeg,jpg,png",
     ];
   }
 
@@ -37,7 +37,7 @@ class StoreSlide extends FormRequest
       'required'  => 'A :attribute is required',
       'max'       => ':attribute length must be less than :input',
       'in'        => ':attribute is no valid',
-      'file'      => ":attribute is file"
+      'image'      => ":attribute is image"
     ];
   }
 }

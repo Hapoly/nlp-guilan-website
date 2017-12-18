@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-new page
+{{$page->title}}
 @endsection
 @section('content')
 <div>

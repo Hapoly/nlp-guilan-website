@@ -1,25 +1,28 @@
 @extends('layouts.app')
 @section('title')
-new page
+{{$slide->title}}
 @endsection
 @section('content')
 <div>
-  <b>title:</b>{{$page->title}}
+  <b>title:</b>{{$slide->title}}
 </div>
 <div>
-  <b>body:</b>{{$page->body}}
+  <b>caption:</b>{{$slide->caption}}
 </div>
 <div>
-  <b>status:</b>{{$page->get_status()}}
+  <b>status:</b>{{$slide->get_status()}}
 </div>
 <div>
-  <a href="{{route('pages.edit', ['page' => $page])}}">edit this page</a>
+  <img src="{{asset('storage/slides/' . $slide->image_url)}}" />
 </div>
 <div>
-  <form action="{{route('pages.destroy', ['page' => $page])}}" method="POST">
+  <a href="{{route('slides.edit', ['slide' => $slide])}}">edit this slide</a>
+</div>
+<div>
+  <form action="{{route('slides.destroy', ['slide' => $slide])}}" method="POST">
     {{ method_field('DELETE') }}
     {{ csrf_field() }}
-    <button type="submit">remove this page</button>
+    <button type="submit">remove this slide</button>
   </form>
 </div>
 @endsection

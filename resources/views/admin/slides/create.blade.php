@@ -8,27 +8,27 @@ new slide
   @if($errors->has('title'))
     {{$errors->first('title')}}
   @endif
-  <input name="title" placeholder="slide title" value="{{old('title')}}"/><br>
+  <input name="title" placeholder="slide title" value="{{old('title')}}" required/><br>
   @if($errors->has('caption'))
     {{$errors->first('caption')}}
   @endif
-  <textarea name="caption" line="3" placeholder="slide caption" value="{{old('caption')}}"/></textarea><br>
+  <textarea name="caption" line="3" placeholder="slide caption" value="{{old('caption')}}" required/></textarea><br>
   @if($errors->has('status'))
     {{$errors->first('status')}}
   @endif
-  <select name="status">
-    <option value="1">published</option>
-    <option value="2">unpublished</option>
+  <select name="status" required>
+    <option value="1" {{old('status') == 1? 'selected' : ''}}>published</option>
+    <option value="2" {{old('status') == 2? 'selected' : ''}}>unpublished</option>
   </select><br>
   @if($errors->has('target_link'))
     {{$errors->first('target_link')}}
   @endif
-  <input name="target_link" placeholder="slide target link" value="{{old('target_link')}}"/><br>
+  <input name="target_link" placeholder="slide target link" value="{{old('target_link')}}" required/><br>
   
   @if($errors->has('image'))
     {{$errors->first('image')}}
   @endif
-  <input name="image" type="file" placeholder="slide image" value="{{old('image')}}"/><br>
+  <input name="image" type="file" placeholder="slide image" required/><br>
   
   <button type="submit">save</button>
 </form>

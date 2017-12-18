@@ -17,8 +17,8 @@ new page
     {{$errors->first('status')}}
   @endif
   <select name="status">
-    <option value="1">published</option>
-    <option value="2">unpublished</option>
+    <option value="1" {{old('status') == '1' ? 'selected': ''}}>published</option>
+    <option value="2" {{old('status') == '2' ? 'selected': ''}}>unpublished</option>
   </select><br>
   <button type="submit">save</button>
 </form>
