@@ -20,7 +20,7 @@ class CreateSlidesTable extends Migration
       $table->increments('id');
       $table->string('title', 64);
       $table->string('caption', 128);
-      $table->string('image_url')->collation('utf8_persian_ci');
+      $table->string('image_url');
       $table->string('target_link')->default('#');
       $table->unsignedSmallInteger('status')->default(1);
       $table->timestamps();

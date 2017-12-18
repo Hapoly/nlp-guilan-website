@@ -18,11 +18,13 @@ class CreateAuthorsTable extends Migration
           $table->collation = 'utf8_persian_ci';
 
           $table->increments('id');
-          $table->string('name', 64);;
+          $table->string('name', 64);
+          $table->string('profile_url', 64);
           $table->unsignedSmallInteger('graduation_status');
           $table->unsignedSmallInteger('position');
-          $table->string('biography', 1000);;
+          $table->string('biography', 1000);
           $table->unsignedSmallInteger('status')->default(1);
+          $table->unsignedSmallInteger('shown')->default(1);
           $table->timestamps();
           $table->softDeletes();
         });

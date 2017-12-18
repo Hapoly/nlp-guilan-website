@@ -66,6 +66,9 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'checkPermission
   Route::resources([
     'slides' => 'SlideController'
   ]);
+  Route::resources([
+    'authors' => 'AuthorController'
+  ]);
   /* 
     =================================================================================================
     ======================================= publications ============================================
