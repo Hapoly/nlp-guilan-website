@@ -18,4 +18,22 @@ class Publication extends Model
     public function datasets(){
       return $this->hasMany('App\Dataset');
     }
+
+    public $status_language = [
+      1   => "active",
+      2   => "inactive",
+    ];
+  
+    public function get_status(){
+      return $this->status_language[$this->status];
+    }
+
+    public $type_language = [
+      1   => "journal",
+      2   => "conference",
+    ];
+  
+    public function get_type(){
+      return $this->type_language[$this->type];
+    }
 }
