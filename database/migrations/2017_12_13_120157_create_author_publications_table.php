@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicationAuthorsTable extends Migration
+class CreateAuthorPublicationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePublicationAuthorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('publication_author', function (Blueprint $table) {
+        Schema::create('author_publication', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('publication_id')->index();
             $table->unsignedInteger('author_id')->index();
@@ -29,6 +29,6 @@ class CreatePublicationAuthorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publication_author');
+        Schema::dropIfExists('author_publication');
     }
 }

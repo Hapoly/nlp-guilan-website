@@ -32,6 +32,6 @@ class AuthorPublicationTableSeeder extends Seeder
         ["publication_id" => 3, "author_id" => 3],
       ];
       foreach($data as $row)
-        DB::table('publication_author')->insert($row);
+        DB::table('author_publication')->insert($row);
     }
 }

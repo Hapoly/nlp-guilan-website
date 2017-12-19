@@ -61,11 +61,21 @@ Route::get('/datasets/{page?}', function ($datasets_page=0) {
 */
 Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'checkPermission:admin'])->group(function (){
   Route::resources([
-    'pages'         => 'PageController',
-    'slides'        => 'SlideController',
-    'authors'       => 'AuthorController',
-    'publications'  => 'PublicationController',
+    'pages'               => 'PageController',
+    'slides'              => 'SlideController',
+    'authors'             => 'AuthorController',
+    'publications'        => 'PublicationController',
   ]);
+  
+  Route::get('publications/{id}/authors', 'AuthorPublicationController@index')
+    ->name('publication.authors');
+  Route::get('publications/{id}/authors/create', 'AuthorPublicationController@create')
+    ->name('publication.authors.create');
+  Route::post('publications/{id}/authors/store', 'AuthorPublicationController@store')
+    ->name('publication.authors.store');
+  Route::post('publication/{publication_id}/authors/destroy/{author_id}', 'AuthorPublicationController@destroy')
+    ->name('publication.authors.destroy');
+  
   /* 
     =================================================================================================
     ======================================= publications ============================================

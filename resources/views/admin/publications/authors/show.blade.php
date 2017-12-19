@@ -22,9 +22,6 @@
   <a href="{{route('publications.edit', ['publication' => $publication])}}">edit this publication</a>
 </div>
 <div>
-  <a href="{{route('publication.authors', ['publication' => $publication])}}">edit authors</a>
-</div>
-<div>
   <form action="{{route('publications.destroy', ['publication' => $publication])}}" method="POST">
     {{ method_field('DELETE') }}
     {{ csrf_field() }}
