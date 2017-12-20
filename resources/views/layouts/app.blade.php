@@ -78,6 +78,7 @@
                   <a class="dropdown-item" href="{{ url('admin/publications/') }}">Publications</a>
                   <a class="dropdown-item" href="{{ url('admin/authors/') }}">Authors</a>
                   <a class="dropdown-item" href="{{ url('admin/datasets/') }}">Datasets</a>
+                  <a class="dropdown-item" href="{{ url('admin/dataset-requests/') }}">Dataset Requests</a>
                   <div class="dropdown-divider"></div>
                 @endif
                 <a class="dropdown-item" href="{{ route('logout') }}" 

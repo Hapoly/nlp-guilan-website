@@ -10,10 +10,11 @@ datasets
 </form>
 <table>
   <thead>
-    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'id'       ,'page' => $datasets->currentPage()])}}">id</a></th>
-    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'title'    ,'page' => $datasets->currentPage()])}}">title</a></th>
-    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'type'     ,'page' => $datasets->currentPage()])}}">type</a></th>
-    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'status'   ,'page' => $datasets->currentPage()])}}">status</a></th>
+    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'id'             ,'page' => $datasets->currentPage()])}}">id</a></th>
+    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'title'          ,'page' => $datasets->currentPage()])}}">title</a></th>
+    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'publication_id' ,'page' => $datasets->currentPage()])}}">publication</a></th>
+    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'type'           ,'page' => $datasets->currentPage()])}}">type</a></th>
+    <th><a href="{{route('datasets.index',['search' => $search,'sort' => 'status'         ,'page' => $datasets->currentPage()])}}">status</a></th>
     <th>operations</th>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@ datasets
       <tr>
         <td>{{$dataset->id}}</td>
         <td>{{$dataset->title}}</td>
+        <td><a href="{{route('publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication->title}}</a></td>
         <td>{{$dataset->get_type()}}</td>
         <td>
           <a href="{{route('datasets.show', ['dataset' => $dataset])}}">show</a>

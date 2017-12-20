@@ -14,4 +14,13 @@ class DatasetRequest extends Model
   public function dataset(){
     return $this->belongsTo('App\Dataset');
   }
+
+  private $status_language = [
+    1   => 'pending',
+    2   => 'accepted',
+    3   => 'refused',
+  ];
+  public function get_status(){
+    return $this->status_language[$this->status];
+  }
 }
