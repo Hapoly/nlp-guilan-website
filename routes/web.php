@@ -65,6 +65,7 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'checkPermission
     'slides'              => 'SlideController',
     'authors'             => 'AuthorController',
     'publications'        => 'PublicationController',
+    'datasets'            => 'DatasetController',
   ]);
   
   Route::get('publications/{id}/authors', 'AuthorPublicationController@index')

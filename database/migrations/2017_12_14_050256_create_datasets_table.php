@@ -23,7 +23,7 @@ class CreateDatasetsTable extends Migration
           $table->unsignedSmallInteger('type')->default(1); // 1 => downloadble, 2 => have to request
           $table->string('file_url')->collation('utf8_persian_ci');
           $table->unsignedSmallInteger('status')->default(1);
-          $table->integer('publication')->index();
+          $table->integer('publication_id')->index();
           $table->timestamps();
           $table->softDeletes();
         });

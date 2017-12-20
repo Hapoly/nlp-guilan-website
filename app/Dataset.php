@@ -18,4 +18,22 @@ class Dataset extends Model
   public function requests(){
     return $this->hasMany('App\DatasetRequest');
   }
+
+  public $status_language = [
+    1 => 'published',
+    2 => 'unpublished'
+  ];
+
+  public function get_status(){
+    return $this->status_language[$this->status];
+  }
+
+  public $type_language = [
+    1 => 'downloadable',
+    2 => 'have to request'
+  ];
+
+  public function get_type(){
+    return $this->type_language[$this->type];
+  }
 }
