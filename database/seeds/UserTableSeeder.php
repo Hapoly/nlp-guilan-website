@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SlideTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class SlideTableSeeder extends Seeder
       $data = [
         [
           "id"                => 1,
-          "username"          => "admin",
+          "name"          => "admin",
           "email"             => "admin@gmail.com",
           "password"          => "$2y$10$8dNxMMXyrTj9qSPrnMdk/eKXpAUpeaI.B1pxQkhSooh8/V9O1NQHW",
           "status"            => 1,
