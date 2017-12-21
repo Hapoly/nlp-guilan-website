@@ -15,7 +15,6 @@ class AuthorTableSeeder extends Seeder
         fake data
       */
       $data = [
-        
       ];
       foreach($data as $row)
         DB::table('authors')->insert($row);
