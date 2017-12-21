@@ -5,16 +5,26 @@
   <div class="col-md-10 offset-md-1 d-none d-sm-block">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        @for($i=0; $i<sizeof($slides); $i++)
+          @if($i == 0)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$slides[$i]->id}}" class="active"></li>
+          @else
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$slides[$i]->id}}"></li>
+          @endif
+        @endfor
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="http://images.addictionblog.org/cherrycake/wp-content/uploads/2017/07/NLP-Addiction-Technique-Addiction-Through-the-Lens-of-NLP-Presuppositions-2.jpg" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="https://www.adaringadventure.com/wp-content/uploads/2011/02/nlp-776x415.jpg" alt="Second slide">
-        </div>
+        @for($i=0; $i<sizeof($slides); $i++)
+          @if($i == 0)
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{{$slides[$i]->image_url}}" alt="{{$slides[$i]->title}}">
+            </div>
+          @else
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{{$slides[$i]->image_url}}" alt="{{$slides[$i]->title}}">
+            </div>
+          @endif
+        @endfor
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
