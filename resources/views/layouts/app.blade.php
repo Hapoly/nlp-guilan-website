@@ -33,7 +33,7 @@
             <a class="nav-link" href="{{ route('normal.publications') }}">Publications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('datasets') }}">Datasets</a>
+            <a class="nav-link" href="{{ route('normal.datasets') }}">Datasets</a>
           </li>
           @auth
             @if(Auth::user()->has_permission('admin'))

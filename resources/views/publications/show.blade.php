@@ -43,4 +43,25 @@
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <th>id</th>
+    <th>title</th>
+    <th>type</th>
+    <th>operations</th>
+  </thead>
+  <tbody>
+    @foreach($publication->datasets as $dataset)
+      <tr>
+        <td>{{$dataset->id}}</td>
+        <td>{{$dataset->title}}</td>
+        <td>{{$dataset->get_type()}}</td>
+        <td>
+          <a href="{{route('normal.datasets.show', ['dataset' => $dataset])}}">show</a>
+          </form>
+        </td>
+      </tr>
+    @endforeach
+  </tbody>
+</table>
 @endsection
