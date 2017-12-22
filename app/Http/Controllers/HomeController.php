@@ -29,15 +29,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-      $slides = Slide::find(['status' => 1]);
       // return $slides;
       return view('home', [ 
-        'slides' => $slides
+        'slides'        => Slide::      where(['status'  => 1])->get(),
+        'publications'  => Publication::where(['status'  => 1])->limit(5)->get(),
       ]);
     }
 
     public function authors(Request $request){
-      $authors = Author::find(['status' => 1]);
+      $authors = Author::where(['status' => 1])->get();
       
       return view('authors.index', [
         'authors'   => $authors,
@@ -50,7 +50,7 @@ class HomeController extends Controller
     }
 
     public function publications(Request $request){
-      $publications = Publication::find(['status' => 1]);
+      $publications = Publication::where(['status' => 1])->get();
       
       return view('publications.index', [
         'publications'   => $publications,
@@ -63,7 +63,7 @@ class HomeController extends Controller
     }
 
     public function datasets(Request $request){
-      $datasets = Dataset::find(['status' => 1]);
+      $datasets = Dataset::where(['status' => 1])->get();
       
       return view('datasets.index', [
         'datasets'   => $datasets,

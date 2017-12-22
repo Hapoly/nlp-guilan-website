@@ -37,6 +37,30 @@
     </div>
   </div>
 </div>
+<table>
+  <thead>
+    <th>id</th>
+    <th>title</th>
+    <th>status</th>
+    <th>type</th>
+    <th>target</th>
+    <th>operations</th>
+  </thead>
+  <tbody>
+    @foreach($publications as $publication)
+      <tr>
+        <td>{{$publication->id}}</td>
+        <td>{{$publication->title}}</td>
+        <td>{{$publication->get_status()}}</td>
+        <td>{{$publication->get_type()}}</td>
+        <td>{{$publication->target}}</td>
+        <td>
+          <a href="{{route('normal.publications.show', ['publication' => $publication])}}">show</a>
+        </td>
+      </tr>
+    @endforeach
+  </tbody>
+</table>
 <div class="row">
   <div class="col-md-10 offset-md-1">
     <p class="lead">
