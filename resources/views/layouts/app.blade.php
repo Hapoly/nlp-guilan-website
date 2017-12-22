@@ -30,7 +30,7 @@
             <a class="nav-link" href="{{ route('normal.authors') }}">People</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('publications') }}">Publications</a>
+            <a class="nav-link" href="{{ route('normal.publications') }}">Publications</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('datasets') }}">Datasets</a>

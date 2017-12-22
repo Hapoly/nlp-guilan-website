@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Slide;
 use App\Author;
+use App\Publication;
 
 class HomeController extends Controller
 {
@@ -42,5 +43,18 @@ class HomeController extends Controller
     public function author(Request $request, $author_id){
       $author = Author::find($author_id);
       return view('authors.show', ['author' => $author]);
+    }
+
+    public function publications(Request $request){
+      $publications = Publication::all();
+      
+      return view('publications.index', [
+        'publications'   => $publications,
+      ]);
+    }
+
+    public function publication(Request $request, $publication_id){
+      $publication = Publication::find($publication_id);
+      return view('publications.show', ['publication' => $publication]);
     }
 }

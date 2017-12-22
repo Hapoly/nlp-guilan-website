@@ -23,9 +23,7 @@ Route::get('/page/{id}', function ($page_id) {
 /* single pages */
 Route::get('/author/{id}', 'HomeController@author')->name('normal.authors.show');
 
-Route::get('/publication/{id}', function ($publication_id) {
-  return "publication $publication_id loaded";
-})->name('publication');
+Route::get('/publication/{id}', 'HomeController@publication')->name('normal.publications.show');
 
 Route::get('/dataset/{id}', function ($dataset_id) {
   return "dataset $dataset_id loaded";
@@ -42,9 +40,7 @@ Route::post('/dataset-request/{id}', function ($dataset_request_id) {
 /* listing pages */
 Route::get('/authors/{page?}', 'HomeController@authors')->name('normal.authors');
 
-Route::get('/publications/{page?}', function ($publications_page=0) {
-  return "publications $publications_page loaded";
-})->name('publications');
+Route::get('/publications/{page?}', 'HomeController@publications')->name('normal.publications');
 
 Route::get('/datasets/{page?}', function ($datasets_page=0) {
   return "datasets $datasets_page loaded";
