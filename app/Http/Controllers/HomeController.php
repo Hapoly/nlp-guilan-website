@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Slide;
+use App\Author;
 
 class HomeController extends Controller
 {
@@ -28,5 +29,18 @@ class HomeController extends Controller
       return view('home', [ 
         'slides' => $slides
       ]);
+    }
+
+    public function authors(Request $request){
+      $authors = Author::all();
+      
+      return view('authors.index', [
+        'authors'   => $authors,
+      ]);
+    }
+
+    public function author(Request $request, $author_id){
+      $author = Author::find($author_id);
+      return view('authors.show', ['author' => $author]);
     }
 }

@@ -21,9 +21,7 @@ Route::get('/page/{id}', function ($page_id) {
 })->name('page');
 
 /* single pages */
-Route::get('/author/{id}', function ($author_id) {
-  return "author $author_id loaded";
-})->name('people');
+Route::get('/author/{id}', 'HomeController@author')->name('normal.authors.show');
 
 Route::get('/publication/{id}', function ($publication_id) {
   return "publication $publication_id loaded";
@@ -42,9 +40,7 @@ Route::post('/dataset-request/{id}', function ($dataset_request_id) {
 })->name('dataset-request');
 
 /* listing pages */
-Route::get('/authors/{page?}', function ($authors_page=0) {
-  return "authors $authors_page loaded";
-})->name('peoples');
+Route::get('/authors/{page?}', 'HomeController@authors')->name('normal.authors');
 
 Route::get('/publications/{page?}', function ($publications_page=0) {
   return "publications $publications_page loaded";
