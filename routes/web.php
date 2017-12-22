@@ -24,14 +24,7 @@ Route::get('/page/{id}', function ($page_id) {
 Route::get('/author/{id}', 'HomeController@author')->name('normal.authors.show');
 Route::get('/publication/{id}', 'HomeController@publication')->name('normal.publications.show');
 Route::get('/dataset/{id}', 'HomeController@dataset')->name('normal.datasets.show');
-
-Route::get('/dataset-request/{id}', function ($dataset_request_id) {
-  return "dataset-request $dataset_request_id sending";
-})->name('dataset-request');
-
-Route::post('/dataset-request/{id}', function ($dataset_request_id) {
-  return "dataset-request $dataset_request_id sent";
-})->name('dataset-request');
+Route::post('/dataset-request/{id}', 'HomeController@dataset_request')->name('normal.datasets.request');
 
 /* listing pages */
 Route::get('/authors/{page?}', 'HomeController@authors')->name('normal.authors');

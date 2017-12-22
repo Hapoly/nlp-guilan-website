@@ -7,6 +7,9 @@ use App\Slide;
 use App\Author;
 use App\Publication;
 use App\Dataset;
+use App\DatasetRequest;
+
+use App\Http\Requests\StoreDatasetRequest;
 
 class HomeController extends Controller
 {
@@ -70,5 +73,21 @@ class HomeController extends Controller
     public function dataset(Request $request, $dataset_id){
       $dataset = Dataset::find($dataset_id);
       return view('datasets.show', ['dataset' => $dataset]);
+    }
+
+    public function dataset_request(StoreDatasetRequest $request, $dataset_id){
+      $dataset = Dataset::find($dataset_id);
+      $dataset_request = new DatasetRequest;
+      
+      $dataset_request->name = $request->input('name');
+      $dataset_request->email = $request->input('email');
+      $dataset_request->university = $request->input('university');
+      $dataset_request->use_case = $request->input('use_case');
+      $dataset_request->status = 1;
+      $dataset_request->dataset_id = $dataset_id;
+
+      $dataset_request->save();
+      
+      return view('datasets.show', ['dataset' => $dataset, 'request_sent' => true]);
     }
 }
