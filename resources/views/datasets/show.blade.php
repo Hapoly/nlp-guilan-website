@@ -18,13 +18,4 @@
 <div>
   <b>type:</b>{{$dataset->get_type()}}
 </div>
-
-<div>
-  <a href="{{route('datasets.edit', ['dataset' => $dataset])}}">edit this dataset</a>
-  <form action="{{route('datasets.destroy', ['dataset' => $dataset])}}" method="POST">
-    {{ method_field('DELETE') }}
-    {{ csrf_field() }}
-    <button type="submit">remove this dataset</button>
-  </form>
-</div>
 @endsection

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Slide;
 use App\Author;
 use App\Publication;
+use App\Dataset;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-      $slides = Slide::all();
+      $slides = Slide::find(['status' => 1]);
       // return $slides;
       return view('home', [ 
         'slides' => $slides
@@ -33,7 +34,7 @@ class HomeController extends Controller
     }
 
     public function authors(Request $request){
-      $authors = Author::all();
+      $authors = Author::find(['status' => 1]);
       
       return view('authors.index', [
         'authors'   => $authors,
@@ -46,7 +47,7 @@ class HomeController extends Controller
     }
 
     public function publications(Request $request){
-      $publications = Publication::all();
+      $publications = Publication::find(['status' => 1]);
       
       return view('publications.index', [
         'publications'   => $publications,
@@ -56,5 +57,18 @@ class HomeController extends Controller
     public function publication(Request $request, $publication_id){
       $publication = Publication::find($publication_id);
       return view('publications.show', ['publication' => $publication]);
+    }
+
+    public function datasets(Request $request){
+      $datasets = Dataset::find(['status' => 1]);
+      
+      return view('datasets.index', [
+        'datasets'   => $datasets,
+      ]);
+    }
+
+    public function dataset(Request $request, $dataset_id){
+      $dataset = Dataset::find($dataset_id);
+      return view('datasets.show', ['dataset' => $dataset]);
     }
 }
