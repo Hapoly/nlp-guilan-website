@@ -9,7 +9,7 @@ pages
     <div class="border-radius">
     <form action="{{route('pages.index',['sort' => $sort ,'page' => 1])}}" method="get">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-8" style="margin-top:13px;">
           <div class="input-group">
             <input class="form-control"  name="search" placeholder="search..." value="{{$search != '###'? $search: ''}}">
             <span class="input-group-btn">
@@ -17,11 +17,14 @@ pages
             </span>
           </div>
        </div>
+       <div class="col-lg-4">
+       <button type="button" class="btn btn-outline-secondary">
+      <a class="create" href="{{route('pages.create')}}">create</a>
+      </button>
+       </div>
       </div>
      </form>
-     <button type="button" class="btn btn-outline-secondary">
-      <a class="create" href="{{route('pages.create')}}">create</a>
-     </button>
+    
       <table class="table">
         <thead class="grey">
           <tr>

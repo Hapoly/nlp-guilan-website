@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
@@ -21,38 +9,15 @@ Route::get('/page/{id}', function ($page_id) {
 })->name('page');
 
 /* single pages */
-Route::get('/author/{id}', function ($author_id) {
-  return "author $author_id loaded";
-})->name('people');
-
-Route::get('/publication/{id}', function ($publication_id) {
-  return "publication $publication_id loaded";
-})->name('publication');
-
-Route::get('/dataset/{id}', function ($dataset_id) {
-  return "dataset $dataset_id loaded";
-})->name('dataset');
-
-Route::get('/dataset-request/{id}', function ($dataset_request_id) {
-  return "dataset-request $dataset_request_id sending";
-})->name('dataset-request');
-
-Route::post('/dataset-request/{id}', function ($dataset_request_id) {
-  return "dataset-request $dataset_request_id sent";
-})->name('dataset-request');
+Route::get('/author/{id}', 'HomeController@author')->name('normal.authors.show');
+Route::get('/publication/{id}', 'HomeController@publication')->name('normal.publications.show');
+Route::get('/dataset/{id}', 'HomeController@dataset')->name('normal.datasets.show');
+Route::post('/dataset-request/{id}', 'HomeController@dataset_request')->name('normal.datasets.request')->middleware('auth');
 
 /* listing pages */
-Route::get('/authors/{page?}', function ($authors_page=0) {
-  return "authors $authors_page loaded";
-})->name('peoples');
-
-Route::get('/publications/{page?}', function ($publications_page=0) {
-  return "publications $publications_page loaded";
-})->name('publications');
-
-Route::get('/datasets/{page?}', function ($datasets_page=0) {
-  return "datasets $datasets_page loaded";
-})->name('datasets');
+Route::get('/authors/{page?}', 'HomeController@authors')->name('normal.authors');
+Route::get('/publications/{page?}', 'HomeController@publications')->name('normal.publications');
+Route::get('/datasets/{page?}', 'HomeController@datasets')->name('normal.datasets');
 
 /* 
   ===================================================================================================

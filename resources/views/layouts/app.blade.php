@@ -27,13 +27,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('peoples') }}">People</a>
+            <a class="nav-link" href="{{ route('normal.authors') }}">People</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('publications') }}">Publications</a>
+            <a class="nav-link" href="{{ route('normal.publications') }}">Publications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('datasets') }}">Datasets</a>
+            <a class="nav-link" href="{{ route('normal.datasets') }}">Datasets</a>
           </li>
           @auth
             @if(Auth::user()->has_permission('admin'))

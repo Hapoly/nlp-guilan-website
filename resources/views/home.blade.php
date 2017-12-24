@@ -17,11 +17,11 @@
         @for($i=0; $i<sizeof($slides); $i++)
           @if($i == 0)
             <div class="carousel-item active">
-              <img class="d-block w-100" src="{{$slides[$i]->image_url}}" alt="{{$slides[$i]->title}}">
+              <img class="d-block w-100" src="{{asset('storage/slides/' . $slides[$i]->image_url)}}" alt="{{$slides[$i]->title}}">
             </div>
           @else
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{$slides[$i]->image_url}}" alt="{{$slides[$i]->title}}">
+              <img class="d-block w-100" src="{{asset('storage/slides/' . $slides[$i]->image_url)}}" alt="{{$slides[$i]->title}}">
             </div>
           @endif
         @endfor
@@ -36,6 +36,36 @@
       </a>
     </div>
   </div>
+</div>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
+<table class="table">
+  <thead  class="grey">
+    <th>id</th>
+    <th>title</th>
+    <th>status</th>
+    <th>type</th>
+    <th>target</th>
+    <th>operations</th>
+  </thead>
+  <tbody>
+    @foreach($publications as $publication)
+      <tr>
+        <td>{{$publication->id}}</td>
+        <td>{{$publication->title}}</td>
+        <td>{{$publication->get_status()}}</td>
+        <td>{{$publication->get_type()}}</td>
+        <td>{{$publication->target}}</td>
+        <td>
+          <a href="{{route('normal.publications.show', ['publication' => $publication])}}">show</a>
+        </td>
+      </tr>
+    @endforeach
+  </tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="row">
   <div class="col-md-10 offset-md-1">

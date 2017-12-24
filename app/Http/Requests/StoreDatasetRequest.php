@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreDataset extends FormRequest
+class StoreDatasetRequest extends FormRequest
 {
   /**
    * Determine if the user is authorized to make this request.
@@ -28,8 +28,8 @@ class StoreDataset extends FormRequest
       "university"      => "string|max:64|required",
       "email"           => "string|max:64|required",
       "use_case"        => "string|max:200|required",
-      "status"          => "numeric|required|in:1,2,3",
-      "dataset_id"      => "numeric|required",
+      "status"          => "numeric|in:1,2,3",
+      "dataset_id"      => "numeric",
     ];
   }
 
