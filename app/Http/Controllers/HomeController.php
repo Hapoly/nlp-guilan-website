@@ -9,6 +9,8 @@ use App\Publication;
 use App\Dataset;
 use App\DatasetRequest;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DatasetRequestAccepted;
 use App\Http\Requests\StoreDatasetRequest;
 
 class HomeController extends Controller
@@ -88,6 +90,7 @@ class HomeController extends Controller
 
       $dataset_request->save();
       
+      Mail::to($request->user())->send(new DatasetRequestAccepted($dataset));
       return view('datasets.show', ['dataset' => $dataset, 'request_sent' => true]);
     }
 }

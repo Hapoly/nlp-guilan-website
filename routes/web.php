@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
@@ -24,7 +12,7 @@ Route::get('/page/{id}', function ($page_id) {
 Route::get('/author/{id}', 'HomeController@author')->name('normal.authors.show');
 Route::get('/publication/{id}', 'HomeController@publication')->name('normal.publications.show');
 Route::get('/dataset/{id}', 'HomeController@dataset')->name('normal.datasets.show');
-Route::post('/dataset-request/{id}', 'HomeController@dataset_request')->name('normal.datasets.request');
+Route::post('/dataset-request/{id}', 'HomeController@dataset_request')->name('normal.datasets.request')->middleware('auth');
 
 /* listing pages */
 Route::get('/authors/{page?}', 'HomeController@authors')->name('normal.authors');
