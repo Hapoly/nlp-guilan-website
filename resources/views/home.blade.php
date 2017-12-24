@@ -37,8 +37,11 @@
     </div>
   </div>
 </div>
-<table>
-  <thead>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
+<table class="table">
+  <thead  class="grey">
     <th>id</th>
     <th>title</th>
     <th>status</th>
@@ -61,6 +64,9 @@
     @endforeach
   </tbody>
 </table>
+</div>
+</div>
+</div>
 <div class="row">
   <div class="col-md-10 offset-md-1">
     <p class="lead">
