@@ -5,7 +5,7 @@ datasets
 @section('content')
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
+    <div class="col-lg-8 col-md-8 col-sm-10 offset-lg-2 offset-md-2 offset-sm-1">
     <div class="border-radius">
     <form action="{{route('datasets.index',['sort' => $sort ,'dataset' => 1])}}" method="get">
       <div class="row">
@@ -41,6 +41,7 @@ datasets
           <td>{{$dataset->title}}</td>
           <td><a href="{{route('publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication->title}}</a></td>
           <td>{{$dataset->get_type()}}</td>
+          <td></td>
           <td>
             <a href="{{route('datasets.show', ['dataset' => $dataset])}}">
             <i class="fa fa-file-text-o"></i></a>
