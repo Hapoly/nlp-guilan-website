@@ -34,3 +34,9 @@ color: black;
 .create:hover{
   text-decoration: none;
 }
+.butt{
+  margin-top: 15px;
+}
+th a{
+  color: black;
+}
