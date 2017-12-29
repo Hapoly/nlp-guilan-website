@@ -71,7 +71,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{Auth::user()->name}}
               </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropdown-menu-right drp" aria-labelledby="navbarDropdown">
                 @if(Auth::user()->has_permission('admin'))
                   <a class="dropdown-item" href="{{ url('admin/pages/') }}">Pages</a>
                   <a class="dropdown-item" href="{{ url('admin/slides/') }}">Slides</a>

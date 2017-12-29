@@ -53,3 +53,9 @@ th a{
   margin-left: 90px;
   width: 80%;
 }
+.navbar-dark .navbar-nav .nav-link {
+  color: #a3a3a3;
+}
+.drp{
+  background-color: #eceeef;
+}
