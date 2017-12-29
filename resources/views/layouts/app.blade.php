@@ -97,7 +97,7 @@
     <div class="container-fluid" style="margin-bottom: 80px;">
       @yield('content')
     </div>
-    <nav class="navbar navbar-dark fixed-bottom" style="background-color:#450b06;">
+    <nav class="navbar navbar-dark fixed-bottom" style=" background-color:#450b06;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
