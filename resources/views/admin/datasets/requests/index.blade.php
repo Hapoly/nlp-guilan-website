@@ -10,7 +10,7 @@ dataset requests
         <form action="{{route('dataset-requests.index',['sort' => $sort ,'dataset' => 1])}}" method="get">
           <div class="row">
             <div class="col-lg-8" style="margin-top:13px;">
-              <div class="input-group">
+              <div class="input-group sr-dr">
                  <input class="form-control" name="search" placeholder="search..." value="{{$search != '###'? $search: ''}}" />
                  <span class="input-group-btn">
                   <button class="btn btn-secondary" type="submit">Go!</button>
