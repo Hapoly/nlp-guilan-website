@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color:#450b06;">
       <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -97,7 +97,7 @@
     <div class="container-fluid" style="margin-bottom: 80px;">
       @yield('content')
     </div>
-    <nav class="navbar navbar-dark fixed-bottom bg-dark">
+    <nav class="navbar navbar-dark fixed-bottom" style="background-color:#450b06;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
