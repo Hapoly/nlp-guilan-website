@@ -39,7 +39,7 @@
 </div>
 <div class="container">
   <div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
+  <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2">
 <table class="table">
   <thead  class="grey">
     <th>id</th>
@@ -58,7 +58,8 @@
         <td>{{$publication->get_type()}}</td>
         <td>{{$publication->target}}</td>
         <td>
-          <a href="{{route('normal.publications.show', ['publication' => $publication])}}">show</a>
+          <a href="{{route('normal.publications.show', ['publication' => $publication])}}">
+          <i  class="fa fa-file-text-o"></i></a>
         </td>
       </tr>
     @endforeach

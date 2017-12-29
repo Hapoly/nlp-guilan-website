@@ -19,7 +19,8 @@ datasets
         <td><a href="{{route('publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication->title}}</a></td>
         <td>{{$dataset->get_type()}}</td>
         <td>
-          <a href="{{route('normal.datasets.show', ['dataset' => $dataset])}}">show</a>
+          <a href="{{route('normal.datasets.show', ['dataset' => $dataset])}}">
+          <i class="fa fa-file-text-o"></i></a>
           </form>
         </td>
       </tr>
