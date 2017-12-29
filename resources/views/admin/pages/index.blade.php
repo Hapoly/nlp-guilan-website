@@ -18,8 +18,8 @@ pages
           </div>
        </div>
        <div class="col-lg-4">
-       <button type="button" class="btn btn-outline-secondary">
-      <a class="create" href="{{route('pages.create')}}">create</a>
+       <button type="button" class="btn btn-outline-secondary create">
+      <a  href="{{route('pages.create')}}">create</a>
       </button>
        </div>
       </div>

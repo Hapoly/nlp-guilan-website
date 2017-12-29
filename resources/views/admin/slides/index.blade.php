@@ -11,14 +11,14 @@ slides
       <div class="row">
         <div class="col-lg-8" style="margin-top:13px;">
           <div class="input-group">
-          <input  class="form-control"  name="search" placeholder="search..." value="{{$search != '###'? $search: ''}}" />
+            <input  class="form-control"  name="search" placeholder="search..." value="{{$search != '###'? $search: ''}}" />
             <span class="input-group-btn">
               <button class="btn btn-secondary" type="submit">Go!</button>
             </span>
           </div>
        </div>
        <div class="col-lg-4">
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" class="btn btn-outline-secondary create">
           <a href="{{route('slides.create')}}">create</a>
           </button>
       </div>

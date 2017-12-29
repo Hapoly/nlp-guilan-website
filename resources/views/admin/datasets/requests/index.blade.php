@@ -5,8 +5,7 @@ dataset requests
 @section('content')
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-10 offset-lg-2 offset-md-2 offset-sm-1">
-      <div class="border-radius">
+    <div class="col-lg-10 col-md-10 col-sm-10 offset-lg-1 offset-md-1 offset-sm-1">
 
         <form action="{{route('dataset-requests.index',['sort' => $sort ,'dataset' => 1])}}" method="get">
           <div class="row">
@@ -19,13 +18,13 @@ dataset requests
               </div>
             </div>
             <div class="col-lg-4">
-              <button type="button" class="btn btn-outline-secondary">
+              <button type="button" class="btn btn-outline-secondary create-dr">
               <a href="{{route('dataset-requests.create')}}">create</a>
               </button>
             </div>
           </div>
         </form>
-
+      
         <table class="table">
           <thead class="grey">
             <th><a href="{{route('dataset-requests.index',['search' => $search,'sort' => 'id'             ,'page' => $dataset_requests->currentPage()])}}">id</a></th>
@@ -54,7 +53,6 @@ dataset requests
           </tbody>
         </table>
 
-      </div>
     </div>
   </div>
 </div>

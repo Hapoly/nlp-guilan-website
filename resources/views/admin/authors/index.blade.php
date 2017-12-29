@@ -5,7 +5,7 @@ authors
 @section('content')
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
+    <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2">
     <div class="border-radius">
     <form action="{{route('authors.index',['sort' => $sort ,'author' => 1])}}" method="get">
         <div class="row">
@@ -18,7 +18,7 @@ authors
             </div>
         </div>
         <div class="col-lg-4">
-            <button type="button" class="btn btn-outline-secondary">
+            <button type="button" class="btn btn-outline-secondary create">
             <a href="{{route('authors.create')}}">create</a>
             </button>
         </div>

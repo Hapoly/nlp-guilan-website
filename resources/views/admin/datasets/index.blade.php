@@ -18,7 +18,7 @@ datasets
           </div>
        </div>
        <div class="col-lg-4">
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" class="btn btn-outline-secondary create">
           <a href="{{route('datasets.create')}}">create</a>
           </button>
       </div>

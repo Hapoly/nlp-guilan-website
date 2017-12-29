@@ -18,7 +18,7 @@ publications
           </div>
        </div>
        <div class="col-lg-4">
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" class="btn btn-outline-secondary create">
           <a href="{{route('publications.create')}}">create</a>
           </button>
       </div>
