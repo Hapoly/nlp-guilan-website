@@ -23,6 +23,7 @@ table th,td{
 }
 .fa-edit{
   color: blue;
+
 }
 .fa-file-text-o{
 color: black;
@@ -73,3 +74,7 @@ th a{
 }
 .save{
   background-color: #a3a3a3;
+}
+.show-edit{
+  margin-right: 3px;
+}
