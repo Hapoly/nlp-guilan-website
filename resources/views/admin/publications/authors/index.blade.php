@@ -47,7 +47,7 @@ publication authors
             </tr>
           @endforeach
           </tbody>
-          </table>
+      </table>
     </div>
   </div>
 </div>
