@@ -77,4 +77,8 @@ th a{
 }
 .show-edit{
   margin-right: 3px;
+  margin-left: 5px;
+}
+.pub-icons{
+  display: -webkit-inline-box;
 }
