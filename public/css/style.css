@@ -82,3 +82,9 @@ th a{
 .pub-icons{
   display: -webkit-inline-box;
 }
+.tb{
+  margin-top: 35px;
+}
+.table{
+  margin-right: 10px;
+}

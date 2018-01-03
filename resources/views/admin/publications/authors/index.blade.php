@@ -25,29 +25,29 @@ publication authors
         </div>
       </form>
 
-<table class="table">
-  <thead class="grey">
-    <th><a href="{{url('admin/publication/' . $publication->id . '/authors?sort=id' . ($search != '###'? '&search=' . $search: ''))}}">id</a></th>
-    <th><a href="{{url('admin/publication/' . $publication->id . '/authors?sort=name' . ($search != '###'? '&search=' . $search: ''))}}">name</a></th>
-    <th><a href="{{url('admin/publication/' . $publication->id . '/authors?sort=position' . ($search != '###'? '&search=' . $search: ''))}}">position</a></th>
-    <th>operations</th>
-  </thead>
-  <tbody>
-    @foreach($authors as $author)
-      <tr>
-        <td>{{$author->id}}</td>
-        <td>{{$author->name}}</td>
-        <td>{{$author->get_position()}}</td>
-        <td>
-          <form action="{{url('admin/publication/'. $publication->id .'/authors/destroy/' . $author->id)}}" method="POST">
-            {{ csrf_field() }}
-            <button type="submit">remove</button>
-          </form>  
-        </td>
-      </tr>
-    @endforeach
-    </tbody>
-    </table>
+      <table class="table">
+        <thead class="grey">
+          <th><a href="{{url('admin/publication/' . $publication->id . '/authors?sort=id' . ($search != '###'? '&search=' . $search: ''))}}">id</a></th>
+          <th><a href="{{url('admin/publication/' . $publication->id . '/authors?sort=name' . ($search != '###'? '&search=' . $search: ''))}}">name</a></th>
+          <th><a href="{{url('admin/publication/' . $publication->id . '/authors?sort=position' . ($search != '###'? '&search=' . $search: ''))}}">position</a></th>
+          <th>operations</th>
+        </thead>
+        <tbody>
+          @foreach($authors as $author)
+            <tr>
+              <td>{{$author->id}}</td>
+              <td>{{$author->name}}</td>
+              <td>{{$author->get_position()}}</td>
+              <td>
+                <form action="{{url('admin/publication/'. $publication->id .'/authors/destroy/' . $author->id)}}" method="POST">
+                  {{ csrf_field() }}
+                  <button type="submit">remove</button>
+                </form>  
+              </td>
+            </tr>
+          @endforeach
+          </tbody>
+          </table>
     </div>
   </div>
 </div>
