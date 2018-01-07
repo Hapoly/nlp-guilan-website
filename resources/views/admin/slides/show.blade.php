@@ -39,7 +39,6 @@
         </td>
       </tr>
     </table>
-     
   </div>
 </div>
 @endsection
