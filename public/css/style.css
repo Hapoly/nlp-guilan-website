@@ -88,3 +88,14 @@ th a{
 .table{
   margin-right: 10px;
 }
+.show-table , .show-table th ,.show-table td {
+  border: 1px solid #eceeef;
+  border-collapse: collapse;
+}
+.show-table{
+ align-items: center;
+ margin-top: 40px;
+}
+.show-table tr{
+  height: 35px;
+}

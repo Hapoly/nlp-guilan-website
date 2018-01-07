@@ -41,7 +41,8 @@
                 <td>{{$author->get_graduation_status()}}</td>
                 <td>{{$author->get_position()}}</td>
                 <td>
-                  <a href="{{route('normal.authors.show', ['author' => $author])}}">show</a>
+                  <a href="{{route('normal.authors.show', ['author' => $author])}}">
+                    <i class="fa fa-file-text-o"></i>
                 </td>
               </tr>
             @endforeach

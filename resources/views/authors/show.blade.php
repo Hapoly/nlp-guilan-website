@@ -43,7 +43,8 @@
                 <td>{{$publication->get_type()}}</td>
                 <td>{{$publication->target}}</td>
                 <td>
-                  <a href="{{route('publications.show', ['publication' => $publication])}}">show</a>
+                  <a href="{{route('publications.show', ['publication' => $publication])}}">
+                  <i class="fa fa-file-text-o"></i></a>
                 </td>
               </tr>
             @endforeach
