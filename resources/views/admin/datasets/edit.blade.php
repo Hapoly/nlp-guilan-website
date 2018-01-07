@@ -69,19 +69,31 @@ edit dataset $dataset->title
             {{$errors->first('status')}}
           @endif
           <div class="form-group row">
-            <div class="col-2">
+            <div class="col-3">
               <label for="status">
                 publication:
               </label>
             </div>
-            <div class="col-9">
+            <div class="col-8">
               <select name="status" class="form-control" required>
                 <option value="1" {{$errors->has('status')? (old('status') == 1? 'selected' : ''): ($dataset->status == 1? 'selected': '')}}>published</option>
                 <option value="2" {{$errors->has('status')? (old('status') == 1? 'selected' : ''): ($dataset->status == 1? 'selected': '')}}>unpublished</option>
               </select><br>
             </div>
           </div>
-
+            @if($errors->has('file_url'))
+              {{$errors->first('file_url')}}
+            @endif
+            <div class="form-group row">
+            <div class="col-3 ">
+              <label for="link" class="col-form-label"> dataset link:    </label>
+            </div>
+            <div class="col-8">
+            <a href="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" >{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}</a>
+              <input name="file_url" class="form-control" placeholder="dataset file url" value="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" required/><br>
+            </div>
+          </div>
+           
           <button type="submit" class="save">save</button>
         </form>
       </div>
@@ -103,7 +115,7 @@ edit dataset $dataset->title
  
   
   
-  <input name="file_url" placeholder="dataset file url" value="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" required/><br>
+  
   
   
 @endsection
