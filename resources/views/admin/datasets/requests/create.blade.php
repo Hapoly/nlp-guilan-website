@@ -80,25 +80,11 @@ new dataset
               </select><br>
             </div>
           </div>
-          @if($errors->has('file_url'))
-            {{$errors->first('file_url')}}
-          @endif
-          <div class="form-group row">
-            <div class="col-3 ">
-              <label for="link" class="col-form-label"> dataset link:    </label>
-            </div>
-            <div class="col-8">
-              <a  class="form-control" href="{{old('file_url')}}" >{{old('file_url')}}</a>
-            </div>
-          </div>
           <button type="submit" class="save">save</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-  <input name="file_url" class="form-control"  value="{{old('file_url')}}" required/><br>
-  
-  
+ 
 @endsection
