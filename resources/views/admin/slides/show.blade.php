@@ -24,8 +24,8 @@
       <tr>
         <th>operation </th>
         <td>
-            <div class="container" style="margin-left:110px;">
-                <div class="row" style=" margin-top: 0">
+            <div class="container" style="text-align:center">
+                <div class="row" style=" margin-top: 0;display: -webkit-inline-box;">
                   <a href="{{route('slides.edit', ['slide' => $slide])}}">
                     <i class="fa fa-edit show-edit"></i>
                   </a>
@@ -35,8 +35,8 @@
                     <button type="submit" class="btn btn-link"><i class="fa fa-trash-o"></i></button>
                   </form>
               </div>
-            </div>
-        </td>
+            </div>         
+         </td>
       </tr>
     </table>
   </div>
