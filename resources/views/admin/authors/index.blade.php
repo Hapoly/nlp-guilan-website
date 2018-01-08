@@ -49,7 +49,7 @@ authors
           <form action="{{route('authors.destroy', ['author' => $author])}}" method="POST" class="trash-icon">
             {{ method_field('DELETE') }}
             {{ csrf_field() }}
-            <i class="fa fa-trash-o"></i>
+            <button type="submit" class="btn btn-link"><i class="fa fa-trash-o"></i></button>
           </form>
         </td>
       </tr>

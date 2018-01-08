@@ -27,7 +27,7 @@
             <form action="{{route('publications.destroy', ['publication' => $publication])}}" method="POST">
               {{ method_field('DELETE') }}
               {{ csrf_field() }}
-              <i class="fa fa-trash-o"></i>
+              <button type="submit" class="btn btn-link"><i class="fa fa-trash-o"></i></button>
             </form>
           </div>
         </div> 
