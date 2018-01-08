@@ -5,24 +5,29 @@
 @section('content')
 <div class="container">
   <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2">
-    <div class="card">
-      <div class="card-block">
-        <div>
-        <b>title:</b>{{$publication->title}}
-        </div>
-        <div>
-          <b>target:</b>{{$publication->target}}
-        </div>
-        <div>
-          <b>year:</b>{{$publication->year}}
-        </div>
-        <div>
-          <b>paper type:</b>{{$publication->get_type()}}
-        </div>
-        <div>
-          <b>status:</b>{{$publication->get_status()}}
-        </div>
-
+    <div>
+      <table class="show-table" style="width:100%">
+        <tr>
+          <th>title </th>
+          <td>{{$publication->title}}</td>
+        </tr>
+        <tr>
+          <th>target </th>
+          <td>{{$publication->target}}</td>
+        </tr>
+        <tr>
+          <th>year </th>
+          <td>{{$publication->year}}</td>
+        </tr>
+        <tr>
+          <th>paper type </th>
+          <td>{{$publication->get_type()}}</td>
+        </tr>
+        <tr>
+          <th>status </th>
+          <td>{{$publication->get_status()}}</td>
+        </tr>
+      </table>
         <table class="table tb">
           <thead class="grey">
             <th>id</th>
@@ -73,7 +78,7 @@
           </tbody>
         </table>
         
-      </div>
+     
     </div>
   </div>
 </div>
