@@ -85,15 +85,13 @@ edit dataset $dataset->title
               {{$errors->first('file_url')}}
             @endif
             <div class="form-group row">
-            <div class="col-3 ">
-              <label for="link" class="col-form-label"> dataset link:    </label>
+              <div class="col-3 ">
+                <label for="link" class="col-form-label"> dataset link:    </label>
+              </div>
+              <div class="col-8">
+                <a  class="form-control" href="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" >{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}</a>
+              </div>
             </div>
-            <div class="col-8">
-            <a href="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" >{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}</a>
-              <input name="file_url" class="form-control" placeholder="dataset file url" value="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" required/><br>
-            </div>
-          </div>
-           
           <button type="submit" class="save">save</button>
         </form>
       </div>
