@@ -41,7 +41,7 @@ publication authors
               <td>
                 <form action="{{url('admin/publication/'. $publication->id .'/authors/destroy/' . $author->id)}}" method="POST">
                   {{ csrf_field() }}
-                  <button type="submit">remove</button>
+                  <button type="submit" class="btn btn-link"><i class="fa fa-trash-o trash-icon"></i></button>
                 </form>  
               </td>
             </tr>

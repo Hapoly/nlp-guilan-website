@@ -78,6 +78,7 @@ th a{
 .show-edit{
   margin-right: 3px;
   margin-left: 5px;
+  margin-top: 12px;
 }
 .pub-icons{
   display: -webkit-inline-box;
@@ -92,6 +93,7 @@ th a{
 .show-table , .show-table th ,.show-table td {
   border: 1px solid #eceeef;
   border-collapse: collapse;
+  text-align: center;
 }
 .show-table{
  align-items: center;
@@ -108,4 +110,7 @@ th a{
 
 .card-show:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.fa-edit{
+  margin-left: 14px;
 }

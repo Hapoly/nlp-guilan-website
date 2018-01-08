@@ -5,8 +5,7 @@
 @section('content')
 <div class="container">
   <div class="col-lg-6 col-md-6 col-sm-8 offset-lg-3 offset-md-3 offset-sm-2">
-    <div class="card">
-      <div class="card-block">
+    <table class="show-table" style="width:100%">
         <div>
           <b>name:</b>{{$author->name}}
         </div>

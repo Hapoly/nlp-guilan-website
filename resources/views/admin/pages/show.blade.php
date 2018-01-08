@@ -21,8 +21,8 @@
       <tr>
         <th>operation </th>
         <td>
-            <div class="container" style="margin-left:110px;">
-                <div class="row" style=" margin-top: 0">
+            <div class="container" style="text-align:center">
+                <div class="row" style=" margin-top: 0;display: -webkit-inline-box;">
                   <a href="{{route('pages.edit', ['page' => $page])}}">
                     <i class="fa fa-edit show-edit"></i>
                   </a>
