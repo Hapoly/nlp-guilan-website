@@ -5,23 +5,28 @@
 @section('content')
 <div class="container">
   <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2">
-    <div class="card">
-      <div class="card-block">
-        <div>
-          <b>name:</b>{{$author->name}}
-        </div>
-        <div>
-          <b>biography:</b>{{$author->biography}}
-        </div>
-        <div>
-          <b>graduation state:</b>{{$author->get_graduation_status()}}
-        </div>
-        <div>
-          <b>position:</b>{{$author->get_position()}}
-        </div>
-        <div>
-          <b>status:</b>{{$author->get_status()}}
-        </div>
+    <table class="show-table" style="width:100%">
+      <tr>
+        <th>name </th>
+        <td>{{$author->name}}</td>
+      </tr>
+      <tr>
+        <th>biography </th>
+        <td>{{$author->biography}}</td>
+      </tr>
+      <tr>
+        <th>graduation state </th>
+        <td>{{$author->get_graduation_status()}}</td>
+      </tr>
+      <tr>
+        <th>position </th>
+        <td>{{$author->get_position()}}</td>
+      </tr>
+      <tr>
+        <th>status </th>
+        <td>{{$author->get_status()}}</td>
+      </tr>
+    </table>
         <div>
           <img width="150" src="{{asset('storage/authors/' . $author->profile_url)}}" />
         </div>
@@ -51,8 +56,7 @@
           </tbody>
         </table>
 
-              </div>
-            </div>
+            
           </div>
         </div>
 

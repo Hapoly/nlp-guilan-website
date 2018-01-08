@@ -47,7 +47,7 @@ pages
                   <form action="{{route('pages.destroy', ['page' => $page])}}" method="POST" class="trash-icon">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-link"><i class="fa fa-trash-o"></i></button>
+                    <button type="submit" class="btn btn-link"><i class="fa fa-trash-o trash-icon"></i></button>
                   </form>
                 </td>
               </tr>
