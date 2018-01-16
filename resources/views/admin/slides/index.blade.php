@@ -35,7 +35,7 @@ slides
           <tr>
             <td>{{$slide->id}}</td>
             <td>{{$slide->title}}</td>
-            <td>{{$slide->status}}</td>
+            <td>{{$slide->get_status()}}</td>
             <td>
               <a href="{{route('slides.show', ['slide' => $slide])}}">
                 <i class="fa fa-file-text-o"></i>

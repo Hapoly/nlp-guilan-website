@@ -38,7 +38,7 @@ pages
               <tr>
                 <td>{{$page->id}}</td>
                 <td>{{$page->title}}</td>
-                <td>{{$page->status}}</td>
+                <td>{{$page->get_status()}}</td>
                 <td>
                   <a href="{{route('pages.show', ['page' => $page])}}">
                   <i class="fa fa-file-text-o"></i></a>

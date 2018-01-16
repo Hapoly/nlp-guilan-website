@@ -41,7 +41,7 @@ datasets
           <td>{{$dataset->title}}</td>
           <td><a href="{{route('publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication->title}}</a></td>
           <td>{{$dataset->get_type()}}</td>
-          <td></td>
+          <td>{{$dataset->get_status()}}</td>
           <td>
             <a href="{{route('datasets.show', ['dataset' => $dataset])}}">
             <i class="fa fa-file-text-o"></i></a>

@@ -35,6 +35,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('normal.datasets') }}">Datasets</a>
           </li>
+          @foreach ($pages as $page)
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('page/'. $page->id) }}">{{$page->title}}</a>
+            </li>
+          @endforeach
           @auth
             @if(Auth::user()->has_permission('admin'))
               <div class="dropdown-divider"></div>
@@ -100,8 +105,8 @@
     <nav class="navbar navbar-dark fixed-bottom" style=" background-color:#450b06;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-          <img src="http://www.fiberopticlighting.com/image/lighting-kits/unlimited-light-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          <img src="{{asset('Guilan_Uni_Logo.png')}}" width="50" height="50" class="d-inline-block align-top" alt="">
+          <img src="{{asset('GuilanNLP_Logo.png')}}" width="50" height="50" class="d-inline-block align-top" alt="">
         </li>
       </ul>
       <ul class="navbar-nav float-right">
