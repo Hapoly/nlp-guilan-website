@@ -19,7 +19,7 @@ datasets
             <tr>
               <td>{{$dataset->id}}</td>
               <td>{{$dataset->title}}</td>
-              <td><a href="{{route('publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication->title}}</a></td>
+              <td><a href="{{route('publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication? $dataset->publication->title: 0}}</a></td>
               <td>{{$dataset->get_type()}}</td>
               <td>
                 <a href="{{route('normal.datasets.show', ['dataset' => $dataset])}}">
