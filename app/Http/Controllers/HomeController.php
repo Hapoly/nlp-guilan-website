@@ -8,6 +8,7 @@ use App\Author;
 use App\Publication;
 use App\Dataset;
 use App\DatasetRequest;
+use App\Page;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\DatasetRequestAccepted;
@@ -92,5 +93,9 @@ class HomeController extends Controller
       
       Mail::to($request->user())->send(new DatasetRequestAccepted($dataset));
       return view('datasets.show', ['dataset' => $dataset, 'request_sent' => true]);
+    }
+
+    public function page(Page $page){
+      return view('page', ['page' => $page]);
     }
 }
