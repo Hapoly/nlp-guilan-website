@@ -15,6 +15,9 @@ class DatasetRequest extends Model
     return $this->belongsTo('App\Dataset');
   }
 
+  const PENDING = 1;
+  const ACCEPTED = 2;
+  const REFUSED = 3;
   private $status_language = [
     1   => 'pending',
     2   => 'accepted',

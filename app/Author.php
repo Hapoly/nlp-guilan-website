@@ -11,6 +11,9 @@ class Author extends Model
   public $incrementing = true;
   public $dates = ['deleted_at'];
 
+  const ACTIVE = 1;
+  const INACTIVE = 2;
+  
   public function publications(){
       return $this->belongsToMany('App\Publication');
   }

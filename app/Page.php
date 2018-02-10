@@ -11,6 +11,9 @@ class Page extends Model
   public $incrementing = true;
   public $dates = ['deleted_at'];
 
+
+  const PUBLISHED = 1;
+  const UNPUBLISHED = 2;
   public $status_language = [
     1 => 'published',
     2 => 'unpublished',

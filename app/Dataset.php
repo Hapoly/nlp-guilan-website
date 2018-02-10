@@ -19,6 +19,8 @@ class Dataset extends Model
     return $this->hasMany('App\DatasetRequest');
   }
 
+  const PUBLISHED = 1;
+  const UNPUBLISHED = 2;
   public $status_language = [
     1 => 'published',
     2 => 'unpublished'

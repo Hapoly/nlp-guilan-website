@@ -11,6 +11,8 @@ class Slide extends Model
   public $incrementing = true;
   public $dates = ['deleted_at'];
 
+  const ACTIVE = 1;
+  const INACTIVE = 2;
   public $status_language = [
     1   => "active",
     2   => "inactive",
