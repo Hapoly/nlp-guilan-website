@@ -19,6 +19,8 @@ class Publication extends Model
       return $this->hasMany('App\Dataset');
     }
 
+    const ACTIVE = 1;
+    const INACTIVE = 2;
     public $status_language = [
       1   => "active",
       2   => "inactive",
