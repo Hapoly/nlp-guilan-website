@@ -24,15 +24,22 @@ new author
            {{$errors->first('graduation_status')}}
           @endif
           <div class="form-group row">
-            <div class="col-2">
-              <label for="status">
-                status:
+            <div class="col-4">
+              <label for="graduation_status">
+                Graduation Status:
               </label>
             </div>
-            <div class="col-9">
+            <div class="col-7">
               <select name="graduation_status" class="form-control" required>
-                <option value="1" {{old('graduation_status') == 1? 'selected' : ''}}>graduated</option>
-                <option value="2" {{old('graduation_status') == 2? 'selected' : ''}}>not graduated</option>
+                <option value="1" {{old('graduation_status') == 1? 'selected' : ''}}>Bachelor</option>
+                <option value="2" {{old('graduation_status') == 2? 'selected' : ''}}>Master</option>
+                <option value="3" {{old('graduation_status') == 3? 'selected' : ''}}>Doctorate</option>
+                <option value="4" {{old('graduation_status') == 4? 'selected' : ''}}>Instructor</option>
+                <option value="5" {{old('graduation_status') == 5? 'selected' : ''}}>Assistant professor</option>
+                <option value="6" {{old('graduation_status') == 6? 'selected' : ''}}>Associate professor</option>
+                <option value="7" {{old('graduation_status') == 7? 'selected' : ''}}>Professor</option>
+                <option value="8" {{old('graduation_status') == 8? 'selected' : ''}}>distinguished Professor</option>
+                <option value="9" {{old('graduation_status') == 9? 'selected' : ''}}>-</option>
               </select><br>
             </div>
           </div>
@@ -40,22 +47,17 @@ new author
             {{$errors->first('position')}}
           @endif
           <div class="form-group row">
-            <div class="col-2">
+            <div class="col-4">
               <label for="position">
-                status:
+              position:
               </label>
             </div>
-            <div class="col-9">
-            <select name="position"  class="form-control" required>
-              <option value="1" {{old('position') == 1? 'selected' : ''}}>Bachelor</option>
-              <option value="2" {{old('position') == 2? 'selected' : ''}}>Master</option>
-              <option value="3" {{old('position') == 3? 'selected' : ''}}>Doctorate</option>
-              <option value="4" {{old('position') == 4? 'selected' : ''}}>Instructor</option>
-              <option value="5" {{old('position') == 5? 'selected' : ''}}>Assistant professor</option>
-              <option value="6" {{old('position') == 6? 'selected' : ''}}>Associate professor</option>
-              <option value="7" {{old('position') == 7? 'selected' : ''}}>Professor</option>
-              <option value="8" {{old('position') == 8? 'selected' : ''}}>distinguished Professor</option>
-            </select><br>
+            <div class="col-7">
+            <select name="position" class="form-control" required>
+            <option value="1" {{(old('position') == 1? 'selected' : '')}}>Member</option>
+            <option value="2" {{(old('position') == 2? 'selected' : '')}}>Supervisor</option>
+            <option value="3" {{(old('position') == 3? 'selected' : '')}}>None</option>
+          </select><br>
             </div>
           </div>
           @if($errors->has('biography'))
@@ -90,15 +92,15 @@ new author
           @endif
           <div class="form-group row">
             <div class="col-2">
-              <label for="shown">
+              <label for="status">
               show:
               </label>
             </div>
             <div class="col-9">
               <select name="status" class="form-control" required>
-                <option value="1" {{old('status') == 1? 'selected' : ''}}>published</option>
-                <option value="2" {{old('status') == 2? 'selected' : ''}}>unpublished</option>
-              </select><br>
+                <option value="1" {{old('status') == 1? 'selected' : ''}}>active</option>
+                <option value="2" {{old('status') == 2? 'selected' : ''}}>old member</option>
+             </select><br>
             </div>
           </div>
           @if($errors->has('image'))
