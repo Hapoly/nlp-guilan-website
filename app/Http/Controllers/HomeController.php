@@ -40,7 +40,9 @@ class HomeController extends Controller
     }
 
     public function authors(Request $request){
-      $authors = Author::where(['status' => 1])->get();
+      $authors = Author::
+          whereIn('status', [Author::ACTIVE, Author::OLD])
+        ->where('shown', Author::SHOWN)->get();
       
       return view('authors.index', [
         'authors'   => $authors,
@@ -53,7 +55,7 @@ class HomeController extends Controller
     }
 
     public function publications(Request $request){
-      $publications = Publication::where(['status' => 1])->get();
+      $publications = Publication::where(['status' => Publication::PUBLISHED])->get();
       
       return view('publications.index', [
         'publications'   => $publications,
@@ -66,7 +68,7 @@ class HomeController extends Controller
     }
 
     public function datasets(Request $request){
-      $datasets = Dataset::where(['status' => 1])->get();
+      $datasets = Dataset::where(['status' => Dataset::PUBLISHED])->get();
       
       return view('datasets.index', [
         'datasets'   => $datasets,
