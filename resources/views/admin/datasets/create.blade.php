@@ -15,7 +15,7 @@ new dataset
           <div class="form-group row">
             <div class="col-2">
               <label for="status">
-                status:
+                Publication:
               </label>
             </div>
             <div class="col-9">
@@ -30,10 +30,12 @@ new dataset
             {{$errors->first('title')}}
           @endif
           <div class="form-group row">
-            <div class="col-3 ">
-              <label for="title" class="col-form-label"> title:    </label>
+            <div class="col-2">
+              <label for="title" class="col-form-label">
+                Title:
+              </label>
             </div>
-            <div class="col-8">
+            <div class="col-9">
               <input name="title" class="form-control" placeholder="title" value="{{old('title')}}" required/><br>
             </div>
           </div>
@@ -64,6 +66,17 @@ new dataset
               </select><br>
             </div>
           </div>
+          @if($errors->has('file_url'))
+            {{$errors->first('file_url')}}
+          @endif
+          <div class="form-group row">
+            <div class="col-2">
+              <label for="caption" class="col-form-label"> File Url: </label>
+            </div>
+            <div class="col-9">
+              <input name="file_url" class="form-control" placeholder="file_url" value="{{old('file_url')}}" required/><br>
+            </div>
+          </div>
           @if($errors->has('status'))
             {{$errors->first('status')}}
           @endif
@@ -85,23 +98,5 @@ new dataset
       </div>
     </div>
   </div>
-</div>
-
-
-  
-
-
- 
-  
- 
- 
- 
-
-  
-  @if($errors->has('file_url'))
-    {{$errors->first('file_url')}}
-  @endif
-  <input name="file_url" placeholder="dataset file url" value="{{old('file_url')}}" required/><br>
-  
-  
+</div>  
 @endsection
