@@ -24,7 +24,7 @@ class StorePublication extends FormRequest
   public function rules()
   {
     return [
-      "title"         => "string|max:32|required",
+      "title"         => "string|max:128|required",
       "year"          => "numeric|required",
       "status"        => "numeric|required|in:1,2",
       "target"        => "string|required",
@@ -35,7 +35,7 @@ class StorePublication extends FormRequest
   public function messages(){
     return [
       'required'  => 'A :attribute is required',
-      'max'       => ':attribute length must be less than :input',
+      'max'       => ':attribute length must be less than :value',
       'in'        => ':attribute is no valid',
       'image'      => ":attribute is image"
     ];
