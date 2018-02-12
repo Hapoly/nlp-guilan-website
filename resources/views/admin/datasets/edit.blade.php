@@ -92,7 +92,7 @@ edit dataset $dataset->title
                 <a  class="form-control" href="{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}" >{{$errors->has('file_url')? old('file_url'): $dataset->file_url}}</a>
               </div>
             </div>
-          <button type="submit" class="save">save</button>
+          <button class="btn btn-default" type="submit" >save</button>
         </form>
       </div>
     </div>

@@ -115,7 +115,7 @@ edit author $author->title
               <input name="image"  class="form-control-file" type="file" placeholder="author image"/><br>
             </div>
           </div>
-          <button type="submit" class="save">save</button>
+          <button class="btn btn-default" type="submit" >save</button>
         </form>
       </div>
     </div>
