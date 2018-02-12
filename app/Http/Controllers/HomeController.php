@@ -93,7 +93,7 @@ class HomeController extends Controller
 
       $dataset_request->save();
       
-      Mail::to($request->user())->send(new DatasetRequestAccepted($dataset));
+      // Mail::to($request->user())->send(new DatasetRequestAccepted($dataset));
       return view('datasets.show', ['dataset' => $dataset, 'request_sent' => true]);
     }
 
