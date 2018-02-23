@@ -8,7 +8,6 @@ datasets
     <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2">
       <table class="table">
         <thead class="grey">
-          <th>id</th>
           <th>title</th>
           <th>publication</th>
           <th>type</th>
@@ -17,7 +16,6 @@ datasets
         <tbody>
           @foreach($datasets as $dataset)
             <tr>
-              <td>{{$dataset->id}}</td>
               <td>{{$dataset->title}}</td>
               <td><a href="{{route('normal.publications.show', ['publication' => $dataset->publication])}}">{{$dataset->publication? $dataset->publication->title: 0}}</a></td>
               <td>{{$dataset->get_type()}}</td>

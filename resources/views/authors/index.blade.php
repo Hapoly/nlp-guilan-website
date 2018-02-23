@@ -8,7 +8,6 @@ authors
     <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2">
       <table class="table">
         <thead class="grey">
-          <th>id</th>
           <th>picture</th>
           <th>title</th>
           <th>graduation</th>
@@ -18,7 +17,6 @@ authors
         <tbody>
           @foreach($authors as $author)
             <tr>
-              <td>{{$author->id}}</td>
               <td><img width="150" src="{{asset('storage/authors/' . $author->profile_url)}}" /></td>
               <td>{{$author->name}}</td>
               <td>{{$author->get_graduation_status()}}</td>
